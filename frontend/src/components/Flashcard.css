@@ -1,0 +1,232 @@
+.flashcard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.flashcard:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.flashcard.unapproved {
+  border: 2px solid #ff9800;
+}
+
+.flashcard.editing {
+  border: 2px solid #667eea;
+}
+
+.flashcard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+}
+
+.badge.level {
+  text-transform: uppercase;
+}
+
+.badge.type {
+  text-transform: capitalize;
+}
+
+.badge.ai {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.unapproved-label {
+  color: #ff9800;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.flashcard-content {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.flashcard-question,
+.flashcard-answer {
+  margin-bottom: 1rem;
+}
+
+.flashcard-question h3,
+.flashcard-answer h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.flashcard-question p,
+.flashcard-answer p {
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.flashcard-answer {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toggle-answer-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.toggle-answer-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+.flashcard-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.flashcard-actions button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.btn-approve {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-approve:hover {
+  background: #45a049;
+}
+
+.btn-edit {
+  background: #2196f3;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #0b7dda;
+}
+
+.btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #da190b;
+}
+
+.btn-save {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-save:hover {
+  background: #45a049;
+}
+
+.btn-cancel {
+  background: #999;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background: #777;
+}
+
+.flashcard.editing .form-group {
+  margin-bottom: 1rem;
+}
+
+.flashcard.editing .form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.flashcard.editing .form-group textarea,
+.flashcard.editing .form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.flashcard.editing .form-group textarea:focus,
+.flashcard.editing .form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .flashcard {
+    padding: 1rem;
+  }
+
+  .flashcard-actions {
+    flex-direction: column;
+  }
+
+  .flashcard-actions button {
+    width: 100%;
+  }
+}
